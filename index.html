@@ -5,19 +5,193 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>꽃담 | 당신의 하루를 꽃으로</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-    body { margin:0; padding:0; }
-    iframe {
+  <style>
+    :root {
+      --bg: #fdfdfd;
+      --text: #3a3a3a;
+      --accent: #6b9e78;
+      --light: #f8f9f5;
+      --gray: #777;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    header {
+      position: relative;
+      height: 80vh;
+      min-height: 500px;
+      background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.25)),
+                  url('https://images.unsplash.com/photo-1526045478516-99145907023c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80') center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .header-content {
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    .logo {
+      font-size: 3.8rem;
+      font-weight: 300;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+    .slogan {
+      font-size: 1.4rem;
+      font-weight: 300;
+      opacity: 0.95;
+    }
+    nav {
+      position: fixed;
+      top: 0;
       width: 100%;
-      height: 100vh;
-      border: none;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 20px 0;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin: 0 30px;
+      font-weight: 400;
+      font-size: 1.05rem;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+    .section {
+      padding: 120px 0 80px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 500;
+      margin-bottom: 60px;
+      color: var(--text);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: all 0.4s ease;
+      text-align: center;
+    }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 24px 20px;
+    }
+    .card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .price {
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 12px 0;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 12px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 16px;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: #5a8a68; }
+
+    footer {
+      background: var(--light);
+      color: var(--gray);
+      text-align: center;
+      padding: 60px 20px 40px;
+      font-size: 0.95rem;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+      .logo { font-size: 2.8rem; }
+      nav ul { flex-wrap: wrap; }
+      nav a { margin: 10px 20px; }
+      .section { padding: 80px 0 60px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ★ 여기에 원하는 주소 넣기 -->
-  <iframe src="https://www.ganedaraoo.shop/"></iframe>
+<nav>
+  <ul>
+    <li><a href="#">홈</a></li>
+    <li><a href="#">꽃다발</a></li>
+    <li><a href="#">꽃바구니</a></li>
+    <li><a href="#">화분·식물</a></li>
+    <li><a href="#">소품·선물</a></li>
+    <li><a href="#">문의</a></li>
+  </ul>
+</nav>
 
-</body>
-</html>
+<header>
+  <div class="header-content">
+    <h1 class="logo">꽃담</h1>
+    <p class="slogan">일상에 스며드는 작은 행복, 오늘도 꽃으로</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <section class="section">
+    <h2 class="section-title">오늘의 추천</h2>
+
+    <div class="products">
+
+      <div class="card">
+        <img src="https://cdn.mos.cms.futurecdn.net/VDi3sVAKr8YzvYWPyBWjBG.jpg" alt="파스텔 꽃다발">
+        <div class="card-content">
+          <h3>파스텔 로맨스</h3>
+          <p class="price">65,000원</p>
+          <p>장미·튤립·라넌큘러스</p>
+          <a href="#" class="btn">상세 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://thumbs.dreamstime.com/b/beautiful-pastel-colored-flower-bouquet-glass-jar-set-against-soft-focus-outdoor-background-perfect-spring-summer-353527045.jpg" alt="유리병 꽃다발">
+        <div class="card-content">
+          <h3>모닝 자몽</h3>
+          <p class="price">48,000원</p>
+          <p>
